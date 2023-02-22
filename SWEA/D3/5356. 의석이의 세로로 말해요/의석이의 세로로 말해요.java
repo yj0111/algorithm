@@ -73,3 +73,40 @@ public class Solution {
 	}
 
 }
+
+//Stack 안쓰고 다른방법으로 푼 풀이 !
+
+public class 의석이2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		//테스트 케이스 T
+		int T = sc.nextInt();
+		
+		for(int t = 1; t <= T; t++) {
+			String[] list = new String[5];
+			
+			for(int i = 0; i < 5; i++) {
+				list[i] = sc.next();
+			}
+			
+			int max = 0;
+			
+			for(int i = 0; i < 5; i++) {
+				max = Math.max(max, list[i].length());
+			}
+			
+			System.out.print("#" + t + " ");
+			for(int i = 0; i < max; i++) {
+				for(int j = 0; j < 5; j++) {
+					if(list[j].length() <= i) {
+						continue;
+					}
+					System.out.print(list[j].charAt(i));
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+
