@@ -9,9 +9,6 @@ public class Main {
 		//돌 N개
 		int N = sc.nextInt();
 		
-		int p1 = 0;
-		int p2 = 0;
-		
 		ArrayList<Integer> game = new ArrayList<>();
 		
 		while(N !=0) {
@@ -23,8 +20,6 @@ public class Main {
 				game.add(1);
 			}
 		}
-//		System.out.println(game);
-		
 		
 		if(game.size() %2 == 0) {
 			System.out.println("CY");
