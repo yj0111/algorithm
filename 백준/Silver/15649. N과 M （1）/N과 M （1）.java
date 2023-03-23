@@ -17,7 +17,7 @@ public class Main {
 		M = Integer.parseInt(st.nextToken());
 
 		list = new int[N + 1];
-		result = new int[N + 1]; // 결과 순열
+		result = new int[M]; // 결과 순열
 		visited = new boolean[N + 1];
 
 		// list 에 1~ N까지 담기
@@ -31,7 +31,7 @@ public class Main {
 
 	public static void check(int idx) {
 		if (idx == M) {
-			for (int i = 0; i < result.length; i++) {
+			for (int i = 0; i < M; i++) {
 				if (result[i] != 0) {
 					System.out.print(result[i] + " ");
 				}
