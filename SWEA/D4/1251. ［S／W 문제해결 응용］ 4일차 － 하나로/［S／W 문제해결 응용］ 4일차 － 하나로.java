@@ -56,13 +56,13 @@ public class Solution {
 				p[i] = i;
 			}
 
-		
+
 			for (Edge e : list) {
 				if (union(e.start, e.end)) {
 					money = money + e.weight;
 				}
 			}
-			
+
 			// 최소 환경 부담금을 소수 첫째 자리에서 반올림
 			System.out.println("#" + tc + " " + Math.round(money));
 		}
