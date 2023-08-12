@@ -61,7 +61,7 @@ public class Main {
                     }
                     result = Math.max(result, days[k][i][j]);
                 }
-            }
+            } 
         }
 
         System.out.println(result);
