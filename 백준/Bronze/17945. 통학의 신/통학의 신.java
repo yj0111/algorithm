@@ -8,15 +8,10 @@ public class Main {
 		int A = sc.nextInt();
 		int B = sc.nextInt();
 
-		int c = (int) Math.sqrt(A * A - B);
-
-		int result_1 = (-1 * A) - c;
-		int result_2 = (-1 * A) + c;
-
-		if (result_1 == result_2) {
-			System.out.println(result_1);
-		} else {
-			System.out.println(result_1 + " " + result_2);
+		for (int x = -999; x <= 999; x++) {
+			if (x * x + 2 * A * x + B == 0) {
+				System.out.print(x + " ");
+			}
 		}
 	}
 
