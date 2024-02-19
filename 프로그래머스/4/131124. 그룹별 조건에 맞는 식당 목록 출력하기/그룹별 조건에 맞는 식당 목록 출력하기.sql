@@ -1,0 +1,16 @@
+SELECT MEMBER_NAME, REVIEW_TEXT, DATE_FORMAT(REVIEW_DATE,"%Y-%m-%d") AS REVIEW_DATE 
+FROM MEMBER_PROFILE AS P
+JOIN REST_REVIEW AS R
+ON P.MEMBER_ID =  R.MEMBER_ID
+WHERE P.MEMBER_ID IN
+        (SElECT MEMBER_ID
+        FROM REST_REVIEW
+        GROUP BY MEMBER_ID
+        HAVING count(*) =
+                (SELECT count(*) as total
+                FROM REST_REVIEW 
+                GROUP BY MEMBER_ID
+                ORDER BY count(*) DESC
+                LIMIT 1)
+         )
+ORDER BY REVIEW_DATE,REVIEW_TEXT
